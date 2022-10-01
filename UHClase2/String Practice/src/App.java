@@ -1,66 +1,63 @@
 import java.util.Scanner;
 
-import javax.sound.sampled.SourceDataLine;
-
 public class App {
+    static int x, conteo = 0, i;
+    static boolean estadia = true;
+    static int opcion;
+    static Scanner dato = new Scanner(System.in);
+    static String nombres[] = new String[15], lista = "";
+    static int nota[] = new int[15], id[] = new int[15];
+
     public static void main(String[] args) throws Exception {
-        String cadena = "Estructura de dAtos", cadena2 = "Informatica";
-        // Date fecha = new Date();
 
-        System.out.println("Subcadena: " + cadena.substring(5, 11));
-        System.out.println(cadena.concat(cadena2));
-        System.out.println(cadena.equals(cadena2));
+        do {
+            System.out.println(
+                    "Selecciones alguna de las opciones. \n1. Ingresar Estudiante \n2. Ver Reporte de Estudiantes. \n3. Modificar Datos de Estudiante");
+            opcion = dato.nextInt();
 
-        String ch = new String("Patatas a ");
-        double x = 11.2;
-        System.out.println(ch = ch + x + " Euros");
+            switch (opcion) {
+                case 1:
+                    lista = "";
+                    for (int x = 0; x < id.length; x++) {
+                        id[x] = x + 1;
+                        System.out.println("Ingresando informacion de estudiante: " + id[x]);
+                        System.out.println("Ingrese el nombre del estudiante: ");
+                        nombres[x] = dato.next();
+                        System.out.println("Ingrese la nota del estudiante: ");
+                        nota[x] = dato.nextInt();
 
-        String bg;
-        bg = 2 + 4 + " Mares";
-        System.out.println(bg);
-        bg = 2 + (4 + " Mares");
-        System.out.println(bg);
-        bg = "Mares " + 2 + 4;
-        System.out.println(bg);
+                        System.out.println("Desea Continua? \n1. Si \n2. No");
+                        opcion = dato.nextInt();
+                        if (opcion == 2) {
+                            break;
+                        }
+                        conteo++;
+                    }
+                    break;
+                case 2:
+                    System.out.println("Reporte de Estudiante");
+                    System.out.println("-------------------------------------");
+                    System.out.println("ID      NOMBRE     NOTA");
+                    for (i = 0; i < conteo; i++) {
+                        lista += id[i] + "      " + nombres[i] + "       " + nota[i] + "\n";
+                    }
+                    System.out.println(lista);
+                    System.out.println("Final del reporte");
+                    break;
+                case 3:
+                    for (i = 0; i < id.length; i++) {
+                        id[i] = i + 1;
+                        nombres[i] = "test";
+                        nota[i] = 0;
+                        conteo++;
+                    }
+                    break;
+                default:
+                    System.out.println("La opcion no existe. Intente de nuevo");
+                    break;
+            }
 
-        // StringBuffer x = new StringBuffer();
-
-        String Str = new String("Estructuras de Datos - Heredia");
-        String subStr1 = new String("de");
-        String subStr2 = new String("Datos");
-
-        System.out.println("Posicion Index : ");
-        System.out.println(Str.indexOf('u'));
-        System.out.println("Posicion Index : ");
-        System.out.println(Str.indexOf('u', 7));
-        System.out.println("Posicion Index : ");
-        System.out.println(Str.indexOf(subStr1));
-        System.out.println("Posicion Index : ");
-        System.out.println(Str.indexOf(subStr1, 17));
-        System.out.println("Posicion Index : ");
-        System.out.println(Str.indexOf(subStr2));
-
-        String persona = "Persona Casada Anciana";
-
-        System.out.println(persona.split(" "));
-
-        Scanner scan = new Scanner(System.in);
-        int posicion;
-        char caracter;
-        String original, invertida = new String();
-        System.out.println("Introduzca la cadena");
-        original = scan.nextLine();
-        posicion = original.length() - 1;
-        while (posicion >= 0) {
-            caracter = original.charAt(posicion);
-            invertida = invertida + caracter;
-            posicion--;
-        }
-        System.out.println("Cadena :" + invertida);
-
-        String cadena1, subcadena;
-        int posicion1 = 0, apariciones = 0;
-        System.out.println("Introduzca la cadena en la que buscar");
+        } while (estadia);
 
     }
 }

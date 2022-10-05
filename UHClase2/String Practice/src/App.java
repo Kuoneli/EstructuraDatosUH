@@ -12,7 +12,7 @@ public class App {
 
         do {
             System.out.println(
-                    "Selecciones alguna de las opciones. \n1. Ingresar Estudiante \n2. Ver Reporte de Estudiantes. \n3. Modificar Datos de Estudiante");
+                    "Selecciones alguna de las opciones. \n1. Ingresar Estudiante \n2. Ver Reporte de Estudiantes. \n3. Inicializar Variables ");
             opcion = dato.nextInt();
 
             switch (opcion) {

@@ -1,7 +1,3 @@
-import javax.naming.InitialContext;
-import javax.swing.JSpinner.NumberEditor;
-import javax.swing.event.ListDataEvent;
-
 public class App {
     public static void main(String[] args) throws Exception {
         // Recursividad
@@ -33,7 +29,6 @@ public class App {
 
     public static int losConejosYFibonacci(int n, int conejos, int parejas) {
         int suma;
-        int total = 0;
         if (n == 10) {
             return 2;
         } else {

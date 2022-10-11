@@ -7,46 +7,43 @@ public class App {
     //Recursividad
     int numeros[] = {1,2,3,4,5,6};
     int digito = 18;
-    //System.out.println("Suma N enteros");
-    //System.out.println(sumaNenteros(4));
-    //System.out.println("El Factorial");
-    //System.out.println(factorial(4));
+    System.out.println("Suma N enteros");
+    System.out.println(sumaNenteros(4));
+    System.out.println("El Factorial");
+    System.out.println(factorial(4));
     //System.out.println("Suma del Array");
     //System.out.println(sumaVector(numeros, 1, numeros.length));
-    //La cantidad de vocales de una cadena.
-    //System.out.println("Calcular potencia");
-    //System.out.println(potencia(5, 3));
-    //System.out.println("Digitos de numero");
-    //System.out.println(digitosDeNumero(123456789));
-    //String palabra = "Sé verlas al revés";
-    //int posicion = palabra.length()-1;
-    //System.out.println("Invetida ");
-    //System.out.println(invertida(palabra, posicion));
+    System.out.println("Calcular potencia");
+    System.out.println(potencia(5, 3));
+    System.out.println("Digitos de numero");
+    System.out.println(digitosDeNumero(123456789));
+    String invertir = "Macadamia";
+    int posicion = invertir.length()-1;
+    System.out.println("Invetida ");
+    System.out.println(invertida(invertir, posicion));
     //System.out.println("String Builder");
     //String invertida = new StringBuilder(palabra).reverse().toString();
     //System.out.println(invertida);
-    
-    //System.out.println("Es palindroma");
-    //System.out.println(esPalindromo(palabra));
-
-    //Buscar un elemento en un array, devuelve la posicion en la que esta.
+    String palabra = "Sé verlas al revés";
+    System.out.println("Es palindroma");
+    System.out.println(esPalindromo(palabra));  
     System.out.println("Fibonacci");
     System.out.println(losConejosYFibonacci(1, 1, 0));
 
 
     } 
 
-    public static int losConejosYFibonacci(int n, int conejos, int anterior){
+    public static int losConejosYFibonacci(int n, int conejos, int parejas){
         int suma;
         int total = 0;
         if(n == 10){
             return 2;
         }
         else{
-            suma = conejos+anterior;
-            anterior = conejos;
+            suma = conejos+parejas;
+            parejas = conejos;
             conejos=suma;
-            total = conejos+losConejosYFibonacci(n+1, conejos, anterior);
+            total = conejos+losConejosYFibonacci(n+1, conejos, parejas);
             return total;
         }
         

@@ -26,7 +26,7 @@ public class App {
         String palabra = "Sé verlas al revés";
         System.out.println("Es palindroma");
         System.out.println(esPalindromo(palabra));
-        System.out.println("Fibonacci");
+        System.out.println("Conejos en un año: ");
         System.out.println(losConejosYFibonacci(1, 1, 0));
 
     }

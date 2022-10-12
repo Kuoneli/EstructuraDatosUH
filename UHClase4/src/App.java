@@ -35,7 +35,7 @@ public class App {
             suma = conejos + parejas;
             parejas = conejos;
             conejos = suma;
-            return suma+losConejosYFibonacci(n+1, conejos, parejas);
+            return suma + losConejosYFibonacci(n + 1, conejos, parejas);
         }
 
     }

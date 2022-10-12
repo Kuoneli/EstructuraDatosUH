@@ -24,7 +24,7 @@ public class App {
         System.out.println(esPalindromo(palabra));
         System.out.println("Conejos en un año: ");
         System.out.println(losConejosYFibonacci(1, 1, 0));
-
+        System.out.println(conejos(12));
     }
 
     public static int losConejosYFibonacci(int n, int conejos, int parejas) {
@@ -39,6 +39,13 @@ public class App {
         }
 
     }
+
+    public static long conejos(long n) {
+        if ((n == 0) || (n == 1))
+           return n;
+        else
+           return conejos(n - 1) + conejos(n - 2);
+     }
 
     public static boolean esPalindromo(String cadena) {
         // Convertir a minúscula y quitar espacios " ", puntos "." y comas ","
